@@ -58,6 +58,10 @@ def signup_sitter():
         username = request.form['username']
         dob = request.form.get('dob')
         experience = request.form['experience']
+
+        session['username'] = username
+        session['user_type'] = 'sitter'
+
         return redirect(url_for('account'))
     return render_template('PSsignup.html')
 
@@ -108,6 +112,14 @@ def favourites():
 @strona.route('/booking')
 def booking():
     return render_template('booking.html')
+
+@strona.route('/OGenAdv')
+def OGenAdv():
+    return render_template('OGenAdv.html')
+
+@strona.route('/SGenAdv')
+def SGenAdv():
+    return render_template('SGenAdv.html')
 
 if __name__ == '__main__':
     strona.run(debug=True)
