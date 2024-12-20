@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pupsery - Owner Account</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+	<div class="Oprofile-container">
+	
+		<div class="profile-picture">
+			<p>Profile Picture</p>
+		</div>
+		
+		<div class="username-section">
+			<input type="text" placeholder="Name" class="name-input">
+			<input type="text" placeholder="Username" class="username-input">
+		</div>
+		
+		<div class="pet-details-container">
+			<div class="pet-details">
+				<input type="text" placeholder="Pet 1" class="pet-title">
+				<textarea placeholder="Pet Details" class="pet-info"></textarea>
+			</div>
+			
+			<div class="pet-details">
+				<input type="text" placeholder="Pet 2" class="pet-title">
+				<textarea placeholder="Pet Details" class="pet-info"></textarea>
+			</div>
+		</div>
+		
+		<div class="text-section">
+			<textarea placeholder="Some Text"></textarea>
+		</div>
+		
+		<div class="home-button-container">
+			<a href="home" class="home-button">Go To Home</a>
+		</div>
+	
+	</div>
+	
+</body>
+</html>

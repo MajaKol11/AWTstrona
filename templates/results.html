@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pupsery - Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div>
+        <div class="favourites-btn">
+            <button onclick="location.href='/favourites'" class="btn">Favourites</button>
+        </div>
+		<div class="results-list">
+			<div class="sitter-card" data-id="sitter1">
+				<a href="sitter1" class="sitter-details">
+					<h3>Kenna MacDonald</h3>
+					<p>⭐⭐⭐⭐⭐</p>
+				</a>
+				<button class="favourite-btn" onclick="addToFavourites('sitter1', 'Kenna MacDonald', '⭐⭐⭐⭐⭐')">Favourite</button>
+
+			</div>
+
+			<div class="sitter-card" data-id="sitter2">
+				<a href="sitter2" class="sitter-details">
+					<h3>Alan McKendrick</h3>
+					<p>⭐⭐⭐⭐</p>
+				</a>
+			    <button class="favourite-btn" onclick="addToFavourites('sitter2', 'Alan McKendrick', '⭐⭐⭐⭐')">Favourite</button>
+
+			</div>
+
+			<div class="sitter-card" data-id="sitter3">
+				<a href="sitter3" class="sitter-details">
+					<h3>Lily Evans</h3>
+					<p>⭐⭐⭐</p>
+				</a>
+			    <button class="favourite-btn" onclick="addToFavourites('sitter3', 'Lily Evans', '⭐⭐⭐')">Favourite</button>
+
+			</div>
+
+			<div class="sitter-card" data-id="sitter4">
+				<a href="sitter4" class="sitter-details">
+					<h3>Oliver Thompson</h3>
+					<p>⭐⭐⭐⭐</p>
+				</a>
+				<button class="favourite-btn" onclick="addToFavourites('sitter4', 'Oliver Thompson', '⭐⭐⭐⭐')">Favourite</button>
+
+			</div>
+		</div>
+|
+	</div>
+
+<script>
+function addToFavourites(id, name, rating) {
+    let favourites = JSON.parse(localStorage.getItem('favourites')) || [];
+    
+    //Check if the sitter is already in favourites
+    if (!favourites.some(fav => fav.id === id)) {
+        favourites.push({ id, name, rating });
+        localStorage.setItem('favourites', JSON.stringify(favourites));
+        alert(`${name} has been added to your favourites!`);
+    } else {
+        alert(`${name} is already in your favourites.`);
+    }
+}
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Sitter</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+	<script src="{{ url_for('static', filename='js/booking.js') }}" defer></script>
+</head>
+<body>
+	<div class="booking-container">
+		<div class="calendar">
+			<h2>Select a Day</h2>
+			<div class="days-grid" id="daysGrid">
+			</div>
+		</div>
+		<div class="day-details" id="dayDetails">
+			<h3>Selected Day: <span id="selectedDay"></span></h3>
+			<label for="timeInput">Time:</label>
+			<input type="time" id="timeInput">
+			<label for="notesInput">Notes:</label>
+			<textarea id="notesInput" placeholder="Add any notes..."></textarea>
+			<button class="btn submit-btn" id="submitBtn">Send Request</button>
+		</div>
+	</div>
+	<div id="confirmationMessage" class="hidden">Request Sent!</div>
+</body>
+</html>

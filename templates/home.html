@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Pupsery - Home</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+		<div class="container">
+			<div class="header">
+				<h1>Home</h1>
+			</div>
+			<form class="form-container" action="/home" method="POST">
+				<div class="form-input">
+					<input type="text" name="location" placeholder="Location">
+				</div>
+				<div class="form-input">
+					<select name="petno" class="form-input">
+						<option value="" disabled selected>Select Number of Pets</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7+">7+</option>
+					</select>
+				</div>
+				<div class="form-input">
+					<select name="service" class="form-input">
+						<option value="" disabled selected>Select Service Required</option>
+						<option value="w">Walking</option>
+						<option value="w+f">Walking and Feeding</option>
+						<option value="w+f+s">Walking, Feeding, and Stay</option>
+						<option value="b">Boarding</option>
+						<option value="si">Sitting</option>
+						<option value="siAtS">Sitting At Sitters House</option>
+					</select>
+				</div>
+				<div class="form-input">
+					<select name="duration" class="form-input">
+						<option value="" disabled selected>Select Duration</option>
+						<option value="1h">1 Hour</option>
+						<option value="2-4h">2 to 4 Hours</option>
+						<option value="5+h">5+ Hours</option>
+						<option value="1d">1 Day</option>
+						<option value="2d">2 Days</option>
+						<option value="3d">3 Days</option>
+						<option value="4+d">4+ Days</option>
+						<option value="1w">1 Week</option>
+						<option value="2w">2 Weeks</option>
+						<option value="3+w">3+ Weeks</option>
+					</select>
+				</div>
+				<div class="button-container">
+					<button type="submit" class="btn">Submit</button>
+				</div>
+			</form>
+		</div>
+</body>
+</html>
